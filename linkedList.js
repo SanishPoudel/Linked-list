@@ -21,4 +21,9 @@ class LinkedList {
       current.nextNode = new Node(value);
     }
   }
+
+  prepend(value) {
+    let previous = this.head;
+    this.head = new Node(value, previous);
+  }
 }
