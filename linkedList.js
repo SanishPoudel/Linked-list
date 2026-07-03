@@ -69,4 +69,13 @@ class LinkedList {
     }
     return undefined;
   }
+
+  pop() {
+    let current = this.head;
+    if (!current) {
+      return undefined;
+    }
+    this.head = current.nextNode;
+    return current;
+  }
 }
