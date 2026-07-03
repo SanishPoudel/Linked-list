@@ -26,4 +26,14 @@ class LinkedList {
     let previous = this.head;
     this.head = new Node(value, previous);
   }
+
+  size() {
+    let current = this.head;
+    let count = 0;
+    while (current) {
+      count ++;
+      current = current.nextNode;
+    }
+    return count;
+  }
 }
