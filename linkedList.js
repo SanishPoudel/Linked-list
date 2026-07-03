@@ -36,4 +36,14 @@ class LinkedList {
     }
     return count;
   }
+
+  head() {
+    let current = this.head;
+    if (current) {
+      return current;
+    } else {
+      return undefined;
+    }
+  }
+
 }
