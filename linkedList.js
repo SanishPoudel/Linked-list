@@ -174,3 +174,5 @@ console.log(list.at(2));
 console.log(list.findIndex("snake"));
 list.removeAt(3);
 console.log(list.toString());
+list.insertAt(2, 10, 11)
+console.log(list.toString());
