@@ -39,11 +39,10 @@ class LinkedList {
 
   head() {
     let current = this.head;
-    if (current) {
-      return current;
-    } else {
+    if (!current) {
       return undefined;
     }
+    return current;
   }
 
   tail() {
