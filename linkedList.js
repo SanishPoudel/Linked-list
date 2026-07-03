@@ -6,15 +6,15 @@ class Node {
 }
 
 class LinkedList {
-  constructor(head = null) {
-    this.head = head;
+  constructor(headnode = null) {
+    this.headnode = headnode;
   }
 
   append(value) {
-    if (this.head === null) {
-      this.head = new Node(value);
+    if (this.headnode === null) {
+      this.headnode = new Node(value);
     } else {
-      let current = this.head;
+      let current = this.headnode;
       while (current.nextNode) {
         current = current.nextNode;
       }
@@ -23,12 +23,12 @@ class LinkedList {
   }
 
   prepend(value) {
-    let previous = this.head;
-    this.head = new Node(value, previous);
+    let previous = this.headnode;
+    this.headnode = new Node(value, previous);
   }
 
   size() {
-    let current = this.head;
+    let current = this.headnode;
     let count = 0;
     while (current) {
       count ++;
@@ -38,7 +38,7 @@ class LinkedList {
   }
 
   head() {
-    let current = this.head;
+    let current = this.headnode;
     if (!current) {
       return undefined;
     }
@@ -46,7 +46,7 @@ class LinkedList {
   }
 
   tail() {
-    let current = this.head;
+    let current = this.headnode;
     if (!current) {
       return undefined;
     }
@@ -58,7 +58,7 @@ class LinkedList {
 
   at(index) {
     let count = 0;
-    let current = this.head;
+    let current = this.headnode;
     while (current) {
       if (count === index) {
         return current;
@@ -70,16 +70,16 @@ class LinkedList {
   }
 
   pop() {
-    let current = this.head;
+    let current = this.headnode;
     if (!current) {
       return undefined;
     }
-    this.head = current.nextNode;
+    this.headnode = current.nextNode;
     return current;
   }
 
   contains(value) {
-    let current = this.head;
+    let current = this.headnode;
     while (current) {
       if (current.value === value) {
         return true;
@@ -90,7 +90,7 @@ class LinkedList {
   }
 
   findIndex(value) {
-    let current = this.head;
+    let current = this.headnode;
     let count = 0;
     while (current) {
       if (current.value === value) {
@@ -101,4 +101,28 @@ class LinkedList {
     }
     return -1;
   }
+
+  toString() {
+    let current = this.headnode;
+    let str = ""
+    if (!current) {
+      return str;
+    }
+    while (current) {
+      str = str + "( " + current.value + " )" + " -> ";
+      current = current.nextNode;
+    }
+    return str + null;
+  }
 }
+
+
+const list = new LinkedList();
+
+list.append("dog");
+list.append("cat");
+list.append("parrot");
+list.append("hamster");
+list.append("snake");
+list.append("turtle");
+console.log(list.toString());
