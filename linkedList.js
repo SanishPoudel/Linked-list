@@ -46,4 +46,14 @@ class LinkedList {
     }
   }
 
+  tail() {
+    let current = this.head;
+    if (!current) {
+      return undefined;
+    }
+    while (current.nextNode) {
+      current = current.nextNode;
+    }
+    return current;
+  }
 }
